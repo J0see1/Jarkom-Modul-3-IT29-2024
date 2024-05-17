@@ -193,7 +193,7 @@ echo -e "zone \"atreides.it29.com\" {
         file \"/etc/bind/jarkom/atreides.it29.com\";
 };
 
-zone \"harkonen.it29.it29.com\" {
+zone \"harkonen.it29.com\" {
         type master;
         file \"/etc/bind/jarkom/harkonen.it29.com\";
 };" > /etc/bind/named.conf.local
@@ -225,7 +225,7 @@ $TTL    604800
                          604800 )       ; Negative Cache TTL
 ;
 @       IN      NS      atreides.it29.com.
-@       IN      A       10.78.2.3" > /etc/bind/jarkom/altreides.it29.com
+@       IN      A       10.78.2.3" > /etc/bind/jarkom/atreides.it29.com
 
 service bind9 restart                    
 ```
