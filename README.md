@@ -533,7 +533,9 @@ upstream worker { #(round-robin(default), least_conn, ip_hash, hash $request_uri
 Jika uncomment least_conn maka algortima yang digunakan adalah Least Connection, sementara jika tidak ada meng-uncomment satupun maka algoritma yang digunakan sesuai dengan default yaitu Round Robin.
 
 Seteleh memilih algoritma, maka lakukan load testing dengan menjalankan command berikut pada client 
-`ab -n 500 -c 50 http://harkonen.it19.com/`
+```
+ab -n 500 -c 50 http://harkonen.it29.com/
+```
 
 **Berikut adalah report hasil testing pada Apache Benchmark untuk setiap Algoritma** 
 - Round Roubin :
