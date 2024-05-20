@@ -356,7 +356,7 @@ Kemudian pada Mohiam :
 service isc-dhcp-server restart
 ```
 
-<h3>**Output** :</h3>
+<h3>Output :</h3>
 - service isc-dhcp-relay restart
   
 ![1](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/0b04aaf1-b779-4612-999d-8b81e3130fc8)
