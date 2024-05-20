@@ -347,19 +347,21 @@ subnet 10.78.2.0 netmask 255.255.255.0 {
 ' > /etc/dhcp/dhcpd.conf
 ```
 
-Jalankan script ini di DHCP Relay (Arakis) :
+Sebelum menyalakan node client, lakukan command berikut pada Arakis(DHCP Relay)
 ```
-apt-get update
-apt-get install isc-dhcp-relay -y
-service isc-dhcp-relay start
+service isc-dhcp-relay restart
+```
+Kemudian pada Mohiam :
+```
+service isc-dhcp-server restart
 ```
 
-Output :
+**Output** :
 - service isc-dhcp-relay restart
   
 ![1](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/0b04aaf1-b779-4612-999d-8b81e3130fc8)
 
-- Start client (Paul & Dmitri)
+- Start node client (Paul & Dmitri), ketika client dimulai maka client akan mengirim request ke DHCP Server dan akan mendapatkan IP Address seperti gambar berikut : 
   
   ![2](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/efcfb3ae-8c6e-4b4f-a269-cc619ecb9f3e)
 ![3](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/fb62836c-606d-4d4a-8946-89f4cb89eec3)
