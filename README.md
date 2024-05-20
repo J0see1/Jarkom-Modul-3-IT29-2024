@@ -508,15 +508,29 @@ Berikut adalah hasil load testing :
 ![image](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/36fb0856-19a6-4f57-9e7d-41ca3e9133d5)
 
 # Soal 8 
-Karena diminta untuk menuliskan peta tercepat menuju spice, buatlah analisis hasil testing dengan 500 request dan 50 request/second masing-masing algoritma Load Balancer dengan ketentuan sebagai berikut:
+Karena diminta untuk menuliskan peta tercepat menuju spice, buatlah analisis hasil testing dengan 500 request dan 50 request/second masing-masing algoritma Load Balancer dengan ketentuan sebagai berikut:<br>
 a. Nama Algoritma Load Balancer
-b. Report hasil testing pada Apache Benchmark
-c. Grafik request per second untuk masing masing algoritma. 
-d. Analisis
+b. Report hasil testing pada Apache Benchmark<br>
+c. Grafik request per second untuk masing masing algoritma.<br>
+d. Analisis<br>
 
-Jalankan command berikut pada client 
+Sebelum melakukan load testing, kita dapat mengatur Algoritma apa yang ingin digunakan pada konfigurasi Stilgar, dapat dilakukan dengan meng-uncomment salah satu algoritma :
+```
+upstream worker { #(round-robin(default), least_conn, ip_hash, hash $request_uri consistent) 
+#    hash $request_uri consistent;
+#    least_conn;
+#    ip_hash;
+    server 10.78.1.3;
+    server 10.78.1.4;
+    server 10.78.1.5;
+}
+```
+Jika uncomment least_conn maka algortima yang digunakan adalah Least Connection, sementara jika tidak ada meng-uncomment satupun maka algoritma yang digunakan sesuai dengan default yaitu Round Robin.
+
+Seteleh memilih algoritma, maka lakukan load testing dengan menjalankan command berikut pada client 
 `ab -n 500 -c 50 http://harkonen.it19.com/`
 
+**Berikut adalah report hasil testing pada Apache Benchmark untuk setiap Algoritma** 
 - Round Roubin :
 ![round_robin](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/2f390143-ee21-4c36-bbaa-bb7e920ad4b4)
 
