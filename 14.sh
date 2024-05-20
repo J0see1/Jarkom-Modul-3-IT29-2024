@@ -1,8 +1,8 @@
 # Worker
 
-# Fern 8001
-# Flamme 8002
-# Frieren 8003
+# Leto 8001
+# Duncan 8002
+# Jessica 8003
 
 apt-get update
 apt-get install lynx -y
@@ -121,12 +121,12 @@ location ~ /\.ht {
             deny all;
     }
 
-    error_log /var/log/nginx/fff_error.log;
-    access_log /var/log/nginx/fff_access.log;
+    error_log /var/log/nginx/laravel_error.log;
+    access_log /var/log/nginx/laravel_access.log;
 }
 ' > /etc/nginx/sites-available/laravel-worker
 
-ln -s /etc/nginx/sites-available/fff /etc/nginx/sites-enabled/
+ln -s /etc/nginx/sites-available/laravel-worker /etc/nginx/sites-enabled/
 chown -R www-data.www-data /var/www/laravel-praktikum-jarkom/storage
 service php8.0-fpm start
 service nginx restart
