@@ -429,6 +429,22 @@ Kemudian kita run yang di '/root/.bashrc' tadi, kemudian run yang 'script.sh', `
 # Soal 7 
 Aturlah agar Stilgar dari fremen dapat dapat bekerja sama dengan maksimal, lalu lakukan testing dengan 5000 request dan 150 request/second.
 
+Pertama, ubah IP Address pada zone harkonen.it29.com agar mengarah ke Stilgar :
+```
+;
+; BIND data file for local loopback interface
+;
+\$TTL    604800
+@       IN      SOA     harkonen.it29.com. root.harkonen.it29.com. (
+                              2         ; Serial
+                         604800         ; Refresh
+                          86400         ; Retry
+                        2419200         ; Expire
+                         604800 )       ; Negative Cache TTL
+;
+@       IN      NS      harkonen.it29.com.
+@       IN      A       10.78.4.2 # IP Stilgar
+```
 Jalankan script di path `/root/.bashrc` pada Load Balancer Stilgar :
 ```
 echo "nameserver 10.78.3.2" > /etc/resolv.conf
@@ -475,6 +491,14 @@ fi
 
 
 service nginx restart
+```
+Tambahkan config pada client sebelum melakukan load testing :
+```
+apt update
+apt install lynx -y
+apt install htop -y
+apt install apache2-utils -y
+apt-get install jq -y
 ```
 
 # Soal 8 
