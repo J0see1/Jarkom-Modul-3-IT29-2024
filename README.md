@@ -445,6 +445,11 @@ Pertama, ubah IP Address pada zone harkonen.it29.com agar mengarah ke Stilgar :
 @       IN      NS      harkonen.it29.com.
 @       IN      A       10.78.4.2 # IP Stilgar
 ```
+Kemudian, jalankan command berikut pada Irulan :
+```
+service bind9 stop
+service bind9 restart
+```
 Jalankan script di path `/root/.bashrc` pada Load Balancer Stilgar :
 ```
 echo "nameserver 10.78.3.2" > /etc/resolv.conf
