@@ -545,6 +545,30 @@ Seteleh memilih algoritma, maka lakukan load testing dengan menjalankan command 
 
 - Graphic :
 ![grafik](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/6eda13f7-e98d-4bfd-b5cc-fe9f00a86af3)
+Berdasarkan grafik req per second setiap algoritma, didapatkan bahwa req per second tertinggi adalah Algoritma
+Generic Hash dengan nilai 207.9 dan req per second terendah adalah Algoritma Lease Connection dengan nilai\
+180.11
+
+**Analisis**
+Berdasarkan report pada Apache Benchmark, berikut adalah analisis untuk setiap algoritma :
+1. Round Robin : <br>
+Algoritma Round Robin tidak perform dengan baik dalam tes ini, dengan 333 dari 500 permintaan gagal. Ini menunjukkan bahwa algoritma ini mungkin tidak mengelola distribusi beban dengan efisien di bawah kondisi uji ini. Waktu per permintaan cukup tinggi, menunjukkan potensi latensi yang signifikan. RPS yang dihasilkan oleh Round Robin adalah 192.56, yang cukup tinggi, tetapi gagal menangani beban dengan baik dengan 333 permintaan gagal.
+Meskipun RPS tinggi, tingkat kegagalan yang tinggi menunjukkan masalah dalam distribusi beban atau penanganan permintaan di bawah beban puncak.
+2. Least Connection : <br>
+Least Connection memiliki performa yang sedikit lebih buruk daripada Round Robin, dengan sedikit lebih banyak waktu yang dibutuhkan untuk menyelesaikan permintaan tetapi lebih sedikit permintaan yang gagal. RPS untuk Least Connection adalah 180.11, lebih rendah dibandingkan dengan Round Robin.
+Ini menunjukkan bahwa algoritma ini mungkin lebih cocok untuk skenario dengan koneksi yang lebih stabil dan konsisten, tetapi kurang efisien di bawah beban tinggi dengan variabilitas yang tinggi.
+3. IP Hash :<br>
+IP Hash menunjukkan performa yang sangat baik dengan tidak ada permintaan yang gagal dan waktu per permintaan yang lebih rendah dibandingkan dengan Round Robin dan Least Connection. IP Hash mencapai RPS 198.7, yang lebih tinggi dari Least Connection dan Round Robin.
+Tidak ada permintaan yang gagal, menunjukkan stabilitas dan efisiensi yang sangat baik dalam menangani beban tinggi.
+4. Generic Hash :<br>
+Generic Hash memiliki performa terbaik di antara semua algoritma yang diuji. Tidak ada permintaan yang gagal dan waktu per permintaan paling rendah. Generic Hash juga memiliki RPS tertinggi di antara semua algoritma dengan 207.9.
+Ini menunjukkan bahwa algoritma ini sangat efisien dan dapat mengelola beban dengan sangat baik, memberikan latensi yang lebih rendah dan throughput yang lebih tinggi.
+Generic Hash memiliki RPS tertinggi di antara semua algoritma dengan 207.9.
+
+**Kesimpulan**<br>
+Untuk skenario dengan beban kerja yang tinggi, Generic Hash adalah pilihan terbaik diikuti oleh IP Hash. Round Robin dan Least Connection kurang cocok untuk skenario ini karena tingkat kegagalan yang tinggi meskipun RPS mereka cukup tinggi.
+
+
 
 
 
