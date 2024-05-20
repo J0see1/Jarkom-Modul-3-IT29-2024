@@ -366,7 +366,7 @@ service isc-dhcp-server restart
   ![2](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/efcfb3ae-8c6e-4b4f-a269-cc619ecb9f3e)
 ![3](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/fb62836c-606d-4d4a-8946-89f4cb89eec3)
 
-- ping atreidis.it19.com & ping harkonen.it09.com
+- ping atreides.it29.com & ping harkonen.it29.com
   
 ![0](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/33e7c8ea-2df7-477f-84e1-4c72bcff9ab3)
 
