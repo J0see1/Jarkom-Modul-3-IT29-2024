@@ -554,7 +554,7 @@ Berdasarkan grafik req per second setiap algoritma, didapatkan bahwa req per sec
 Generic Hash dengan nilai 207.9 dan req per second terendah adalah Algoritma Lease Connection dengan nilai\
 180.11
 
-**Analisis**
+<h3>Analisis</h3><br>
 Berdasarkan report pada Apache Benchmark, berikut adalah analisis untuk setiap algoritma :
 1. Round Robin : <br>
 Algoritma Round Robin tidak perform dengan baik dalam tes ini, dengan 333 dari 500 permintaan gagal. Ini menunjukkan bahwa algoritma ini mungkin tidak mengelola distribusi beban dengan efisien di bawah kondisi uji ini. Waktu per permintaan cukup tinggi, menunjukkan potensi latensi yang signifikan. RPS yang dihasilkan oleh Round Robin adalah 192.56, yang cukup tinggi, tetapi gagal menangani beban dengan baik dengan 333 permintaan gagal.
