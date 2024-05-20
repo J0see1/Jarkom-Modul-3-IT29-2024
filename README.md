@@ -356,7 +356,7 @@ Kemudian pada Mohiam :
 service isc-dhcp-server restart
 ```
 
-**Output** :
+<h3>**Output** :</h3>
 - service isc-dhcp-relay restart
   
 ![1](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/0b04aaf1-b779-4612-999d-8b81e3130fc8)
@@ -373,7 +373,7 @@ service isc-dhcp-server restart
 # Soal 6
 Vladimir Harkonen memerintahkan setiap worker(harkonen) PHP, untuk melakukan konfigurasi virtual host untuk website berikut dengan menggunakan php 7.3.
 
-Kita buat php config.sh di ketiga worker PHP di '/root/.bashrc' :
+Kita buat config di ketiga worker PHP di '/root/.bashrc' :
 ```
 echo nameserver 10.78.3.2 > /etc/resolv.conf
 
@@ -394,7 +394,7 @@ mv /var/www/modul-3 /var/www/harkonen.it29.com
 source /root/script.sh
 ```
 
-Kemudian jangan dirun dulu, tapi buat script.sh di Php worker :
+Kemudian buat script.sh di PHP worker /root/script.sh:
 ```
 cp /etc/nginx/sites-available/default /etc/nginx/sites-available/harkonen.it29.com
 ln -s /etc/nginx/sites-available/harkonen.it29.com /etc/nginx/sites-enabled/
