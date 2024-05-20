@@ -500,6 +500,12 @@ apt install htop -y
 apt install apache2-utils -y
 apt-get install jq -y
 ```
+Setelah itu, kita dapat melakukan load testing terhadap harkonen.it29.com pada kedua client Dmitri dan Paul dengan 5000 request dan 150 request/second : 
+```
+ab -n 5000 -c 150 http://harkonen.it29.com/
+```
+Berikut adalah hasil load testing :
+![image](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/36fb0856-19a6-4f57-9e7d-41ca3e9133d5)
 
 # Soal 8 
 Karena diminta untuk menuliskan peta tercepat menuju spice, buatlah analisis hasil testing dengan 500 request dan 50 request/second masing-masing algoritma Load Balancer dengan ketentuan sebagai berikut:
@@ -510,8 +516,6 @@ d. Analisis
 
 Jalankan command berikut pada client 
 `ab -n 500 -c 50 http://harkonen.it19.com/`
-
-![image](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/36fb0856-19a6-4f57-9e7d-41ca3e9133d5)
 
 - Round Roubin :
 ![round_robin](https://github.com/J0see1/Jarkom-Modul-3-IT29-2024/assets/143849730/2f390143-ee21-4c36-bbaa-bb7e920ad4b4)
